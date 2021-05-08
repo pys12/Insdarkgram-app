@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/38542b5bb9.js" crossorigin="anonymous"></script>
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <div class='nav'>
+        <div class='nav-content'>
+
+            <div class='nav-left'>
+                <a href="/profile"><i class="fab fa-instagram"style='color: rgb(71, 71, 71);'></i></a>
+                <span>Insdarkgram</span>
+            </div>
+            <div class='nav-right' >
+                <form action="/profile/search" method="GET">
+                    
+                    <input class='input-box'type="text" name="q" placeholder="Search..." />        
+                    
+                    <button type='submit' class='search'>
+
+                        <i class="fas fa-search" style='color: rgb(71, 71, 71);'></i>
+                    </button>
+                    <!-- <input class='search'type="submit" value="Search">     -->
+                </form>
+                
+            </div>
+        </div>
+    </div>
+        <!-- <div> <form action="/profile/sort" method="PUT">
+          
+            
+            <input type="submit" value="Sort">    
+        </form></div> -->
+    
+   
+    
+    <div id='add-container'>
+        <a id='add' href="/profile/new"><i class="far fa-plus-square"style='color: rgb(71, 71, 71);'></i></a>
+    </div>
+
+    <div class='container'>
+    <% for(let i=0;i<insta.length;i++){ %>
+            <a href='/profile/<%=insta[i].id%> '>
+           <img src="<%=insta[i].img%>" alt="postImg">
+            </a>
+           
+            <%}%>
+    </div>
+
+
+</body>
+</html>

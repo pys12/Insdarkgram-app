@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="/css/show.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/38542b5bb9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <title>Post Detail</title>
+</head>
+
+<body>
+    <div class='content-container'>
+        <div class='nav'>
+            <div class='nav-left' >
+                <!-- <a href="/profile"> -->
+                    <img id='profilePhoto'src="<%= insta.profilePhoto%>" alt="profilePhoto">
+
+                <!-- </a> -->
+                <%= insta.username%>
+            </div>
+            <div class='nav-right'>
+                <i class="bi bi-three-dots-vertical" style="font-size: 2rem"></i>
+                <div class='btns'>
+                    <form action="/profile/<%=insta.id;%>/edit"> 
+                        <input type="submit" class="btn btn-outline-dark" id='edit' value='Edit'>
+                    </form>
+                    <form action="/profile/<%=insta.id%>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-outline-danger" value='Delete'>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+         <div class='img-container'>
+            <img src="<%= insta.img%>" alt="postImg">
+        </div>  
+   
+        <div class='text-container'>
+            <div>
+                <i class="bi bi-chat-left-text"style="font-size: 1.4rem"></i>
+                <%= insta.caption%>
+            </div>
+            <i class="bi bi-tag"style="font-size: 1.4rem"></i>
+            <%  for(let i=0;i< insta.tag.length; i++) { %>
+            <div class="badge badge-pill badge-light">
+                 <%= insta.tag[i]%>
+            </div>
+            <% } %>
+    
+            <div>
+                <i class="bi bi-calendar3"style="font-size: 1.4rem"></i>
+                <% let date = insta.time.toISOString() %>
+                <%= date.slice(0,10)%>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
