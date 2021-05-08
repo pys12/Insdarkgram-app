@@ -1,0 +1,25 @@
+body{
+    max-width: 50%;
+    margin: 80px auto;
+    /* background-color: rgb(188, 220, 247); */
+    background-image: url('https://i.imgur.com/qeXWLBC.gif');
+
+}
+h1{
+   color: white;
+   margin-left:20px ;
+
+}
+form{
+  background-color: white;
+  padding: 30px 30px ;
+  border-radius: 20px;
+
+}
+input{
+  margin-bottom:20px ;
+  color: pink;
+}
+#submit{
+  margin: 20px 0 0 0;
+}
