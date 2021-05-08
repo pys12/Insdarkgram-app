@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -7,7 +8,6 @@ const Insta = require('./models/insta.js');
 const db = mongoose.connection;
 const URI = process.env.MONGODB_URI;
 
-require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
