@@ -17,6 +17,12 @@ app.use('/profile',require('./routes/profile.js'))
 //css
 app.use(express.static(__dirname + '/public'));
 
+//direct users to the right page
+app.get('/', (req, res) => {
+  res.send('https://insdarkgram.herokuapp.com/profile/')
+})
+
+
 mongoose.connect(URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
