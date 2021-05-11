@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 //direct users to the right page
 app.get('/', (req, res) => {
-  res.send('https://insdarkgram.herokuapp.com/profile/')
+  res.redirect('/profile')
 })
 
 
